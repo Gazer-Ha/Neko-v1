@@ -13,13 +13,13 @@
 
 FELOADLIBRARY = {}
 loadstring(game:GetObjects("rbxassetid://5209815302")[1].Source)()
-local Player = game:GetService("Players").LocalPlayer
+local cloneref = cloneref or function(o) return o end
+COREGUI = cloneref(game:GetService("CoreGui"))
+Players = cloneref(game:GetService("Players"))
+local Player = Players.LocalPlayer
 local TweenService = game:GetService("TweenService")
 local Create = FELOADLIBRARY.Create
 
-
-
-local Player = game:GetService("Players").LocalPlayer
 
 ZTfade=false 
 ZT=false
@@ -91,16 +91,15 @@ ABS = math.abs
 MRANDOM = math.random
 FLOOR = math.floor
 
-local lastid= "http://www.roblox.com/asset/?id=3852221223"
+local lastid= "http://www.roblox.com/asset/?id="
 local s2=it("Sound",Torso)
 local CurId = 1
 s2.EmitterSize = 30
 local s2c=s2:Clone()
 
 playsong = true
-
+if playsong == true then
 s2.SoundId = lastid
-	if playsong == true then
 		wait(2)
 	s2:play()		
 	elseif playsong == false then
@@ -108,10 +107,10 @@ s2.SoundId = lastid
 	end
 lastsongpos= 0
 
-crosshair = Instance.new("BillboardGui",Character)
+local crosshair = Instance.new("BillboardGui",Character)
 crosshair.Size = UDim2.new(10,0,10,0)
 crosshair.Enabled = false
-imgl = Instance.new("ImageLabel",crosshair)
+local imgl = Instance.new("ImageLabel",crosshair)
 imgl.Position = UDim2.new(0,0,0,0)
 imgl.Size = UDim2.new(1,0,1,0)
 imgl.Image = "rbxassetid://578065407"
@@ -349,14 +348,7 @@ end
 
 
 
-function weld(parent,part0,part1,c0)
-local weld=it("Weld") 
-weld.Parent=parent
-weld.Part0=part0 
-weld.Part1=part1 
-weld.C0=c0
-return weld
-end
+
 function joint(parent,part0,part1,c0)
 local weld=it("Motor6D") 
 weld.Parent=parent
