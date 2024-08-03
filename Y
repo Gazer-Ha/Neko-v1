@@ -9,6 +9,7 @@
 
 
 
+
 -- Neko Part Start Here
 
 FELOADLIBRARY = {}
@@ -18,7 +19,20 @@ COREGUI = cloneref(game:GetService("CoreGui"))
 Players = cloneref(game:GetService("Players"))
 local Player = Players.LocalPlayer
 local TweenService = game:GetService("TweenService")
-local Create = FELOADLIBRARY.Create
+
+local function Create(instanceType)
+    return function(properties)
+        local obj = Instance.new(instanceType)
+        for k, v in pairs(properties) do
+            if type(k) == "string" and obj[k] ~= nil then
+                obj[k] = v
+            elseif k == "Parent" then
+                obj.Parent = v
+            end
+        end
+        return obj
+    end
+end
 
 
 ZTfade=false 
