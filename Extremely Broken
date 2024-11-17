@@ -2518,30 +2518,7 @@ end
 
 local function simulateKeyPress2()
     local VirtualInputManager = game:GetService("VirtualInputManager")
- local animation = Instance.new("Animation")
-animation.AnimationId = "rbxassetid://235542946" -- Animation ID provided
-local animator = RealChar:WaitForChild("Humanoid"):WaitForChild("Animator")
-local animationTrack = animator:LoadAnimation(animation)
-
-local lastPosition = RealChar.PrimaryPart.Position
-local isPlaying = false
-
-game:GetService("RunService").Heartbeat:Connect(function()
-    local currentPosition = RealChar.PrimaryPart.Position
-    local deltaX = math.abs(currentPosition.X - lastPosition.X)
-    local deltaZ = math.abs(currentPosition.Z - lastPosition.Z)
-    
-    if (deltaX > 0.5 or deltaZ > 0.5) and isPlaying then
-        animationTrack:Stop()
-        isPlaying = false
-    elseif deltaX <= 0.5 and deltaZ <= 0.5 and not isPlaying then
-        animationTrack:Play()
-        animationTrack:AdjustSpeed(0) -- Set playback speed to 0
-        isPlaying = true
-    end
-
-    lastPosition = currentPosition
-end)
+ 
     VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.R, false, game)
     VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 end
