@@ -299,12 +299,23 @@ RunService.Heartbeat:Connect(function()
 	MotorAngle()
 	pcall(function()
 	RealChar.HumanoidRootPart.CFrame = FakeCharacter.Torso.CFrame
+        RealChar.HumanoidRootPart.Velocity = 
 	end)
 end)
 
 RunService.PreSimulation:Connect(function()
 	BaseCol()
 end)
+
+
+local bodyVelocity = Instance.new("BodyVelocity")
+bodyVelocity.MaxForce = Vector3.new(0.1, 0.1, 0.1)
+bodyVelocity.Velocity = Vector3.new(0, 0, 0) 
+bodyVelocity.Parent = RealChar.HumanoidRootPart
+
+
+
+
 -- hey go die
 -- also if you steal my taunts and dont credit me for them i'll fucking find you and ban you
 -- big ban bootleg by x5ul
