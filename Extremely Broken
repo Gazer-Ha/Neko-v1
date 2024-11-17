@@ -300,7 +300,6 @@ RunService.Heartbeat:Connect(function()
 	pcall(function()
 	RealChar.HumanoidRootPart.CFrame = FakeCharacter.Torso.CFrame
         humanoidRootPart.Velocity = Vector3.new(0, 0, 0)
-humanoidRootPart.RotVelocity = Vector3.new(0, 0, 0)
 	end)
 end)
 
