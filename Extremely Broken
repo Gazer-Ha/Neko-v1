@@ -1,5 +1,5 @@
 pcall(function()
-local fake_transparency = 0.9
+local fake_transparency = 0.8
 
 local Motors = {
 	["Left Hip"] = 0,
@@ -299,23 +299,13 @@ RunService.Heartbeat:Connect(function()
 	MotorAngle()
 	pcall(function()
 	RealChar.HumanoidRootPart.CFrame = FakeCharacter.Torso.CFrame
-        RealChar.humanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+	RealChar.HumanoidRootPart.Velocity = Vector3.zero
 	end)
 end)
 
 RunService.PreSimulation:Connect(function()
 	BaseCol()
 end)
-
-
-local bodyVelocity = Instance.new("BodyVelocity")
-bodyVelocity.MaxForce = Vector3.new(0.1, 0.1, 0.1)
-bodyVelocity.Velocity = Vector3.new(0, 0, 0) 
-bodyVelocity.Parent = RealChar.HumanoidRootPart
-
-
-
-
 -- hey go die
 -- also if you steal my taunts and dont credit me for them i'll fucking find you and ban you
 -- big ban bootleg by x5ul
@@ -2518,7 +2508,6 @@ end
 
 local function simulateKeyPress2()
     local VirtualInputManager = game:GetService("VirtualInputManager")
- 
     VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.R, false, game)
     VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 end
