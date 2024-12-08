@@ -1,3 +1,18 @@
+local ShowMessage = function(Title, Text, Duration)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = Title;
+        Text = Text;
+        Icon = "";
+        Duration = Duration;
+        Button1 = "OK";
+        Button2 = nil;
+        Callback = NotificationBindable;
+    })
+end
+
+ShowMessage("Silly Scripts","Made By Gazer_HA", 10)
+
+
 pcall(function()
 local fake_transparency = 0.8
 
