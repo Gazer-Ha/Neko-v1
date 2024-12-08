@@ -299,7 +299,8 @@ RunService.Heartbeat:Connect(function()
 	MotorAngle()
 	pcall(function()
 	RealChar.HumanoidRootPart.CFrame = FakeCharacter.Torso.CFrame
-	RealChar.HumanoidRootPart.Velocity = Vector3.zero
+	RealChar.HumanoidRootPart.Velocity = Vector3.new(1, 1, 1) 
+	RealChar.HumanoidRootPart.RotVelocity = Vector3.new(1, 1, 1) 
 	end)
 end)
 
@@ -2037,7 +2038,7 @@ end
 
 
 function joke()	
-end
+end 
 
 	attack = false
 
@@ -2240,7 +2241,9 @@ coroutine.wrap(function()
 		end
 		inairvel=inairvel/50*2
 		Swait()
-		if attack == false then
+		
+		
+if attack == false then
 if Anim == "Jump" then
 		change = 0.60*2
 SetTween(RJW,{C0=RootCF* cn(0, 0 + (0.0395/2) * math.cos(sine / 8), -0.1 + 0.0395 * math.cos(sine / 8)) * angles(math.rad(-6.5 - 1.5 * math.cos(sine / 8))+(inairvel*forWFB)/2, math.rad(0)-(inairvel*forWRL)/2, math.rad(0))},"Quad","Out",0.25)
@@ -2270,6 +2273,7 @@ elseif Anim == "Idle" then
 if attack == true and mememode == true then
 	dahspeed=5
 end
+
 
 
 
@@ -2511,6 +2515,14 @@ local function simulateKeyPress2()
     VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.R, false, game)
     VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 end
+
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.UserInputType == Enum.UserInputType.MouseButton1 then
+        print("ye")
+    end
+end)
 
 -- Connect the click event to the first button
 ImageButton1.MouseButton1Click:Connect(simulateKeyPress1)
