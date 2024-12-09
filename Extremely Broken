@@ -11,7 +11,7 @@ end
 
 
 ShowMessage("Silly Scripts"," By Gazer_HA", 10)
-ShowMessage("fe neko", " By x5ul", 10)
+ShowMessage("fe neko", "Originally made by? who", 10)
 
 
 pcall(function()
