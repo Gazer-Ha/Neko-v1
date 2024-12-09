@@ -1,11 +1,14 @@
-local ShowMessage = function(Title, Text, Duration)
-    game.StarterGui:SetCore("SendNotification", {
-        Title = Title;
-        Text = Text;
-        Icon = "";
-        Duration = Duration;
-    })
+local ShowMessage = function(t, txt, dur)
+    pcall(function()
+        game.StarterGui:SetCore("SendNotification", {
+            Title = t;
+            Text = txt;
+            Icon = "";
+            Duration = dur;
+        })
+    end)
 end
+
 
 ShowMessage("Silly Scripts"," By Gazer_HA", 10)
 ShowMessage("fe neko", " By x5ul", 10)
