@@ -10,7 +10,7 @@ local ShowMessage = function(t, txt, dur)
 end
 
 
-ShowMessage("Silly Scripts"," By Gazer_HA", 10)
+ShowMessage("hatless reanim"," By PresidentAnvil", 10)
 ShowMessage("fe neko", "Originally made by? Who?", 10)
 
 
