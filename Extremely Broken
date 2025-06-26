@@ -9,6 +9,12 @@ local ShowMessage = function(t, txt, dur)
     end)
 end
 
+if getgenv().NekoV1Gaze then
+    ShowMessage("NekoV1", "Script has already been executed.", 4)
+    return
+end
+
+getgenv().NekoV1Gaze = true
 
 ShowMessage("Yeah","gazewazhere", 10)
 
